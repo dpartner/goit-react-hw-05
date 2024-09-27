@@ -1,0 +1,14 @@
+.movieCardWrap {
+  display: flex;
+  
+}
+.descWrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.overview {
+  text-align: left;
+}
