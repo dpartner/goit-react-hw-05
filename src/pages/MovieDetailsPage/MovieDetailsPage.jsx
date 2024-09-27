@@ -6,7 +6,7 @@ import Loader from "../../components/Loader/Loader";
 
 const MovieDetailsPage = () => {
   const {movieId} = useParams();
-  const [movie, setMovie] = useState([]);
+  const [movie, setMovie] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
 
@@ -29,12 +29,16 @@ const MovieDetailsPage = () => {
     fetchData();
   },[movieId])
 
+  if (!movie) {
+    return;
+  }
   return (
     <>
-      {isLoading && <Loader/>}
-      {isError && <h2>Something went wrong, please try again</h2>}
       <Link to='/'> Go back</Link>
+      {isError && <h2>Something went wrong, please try again</h2>}
+      {isLoading && <Loader/>}
       <MovieCard data={movie} />
+      <p>Additional information</p>
     </>
   )
 }
