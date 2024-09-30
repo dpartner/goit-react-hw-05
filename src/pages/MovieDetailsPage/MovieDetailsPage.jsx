@@ -1,6 +1,6 @@
 import { Link, NavLink, Outlet, useLocation, useParams } from "react-router-dom"
 import { fetchMovieDetails } from "../../services/api";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import MovieCard from "../../components/MovieCard/MovieCard";
 import Loader from "../../components/Loader/Loader";
 import s from './MovieDetailsPage.module.css'
@@ -12,7 +12,7 @@ const MovieDetailsPage = () => {
   const [movie, setMovie] = useState(null);
   const [isError, setIsError] = useState(false);
   const location = useLocation();
-  const backLinkHref = location.state ?? '/movies';
+  const backLinkHref = useRef(location.state ?? '/movies');
   // const [isLoading, setIsLoading] = useState(false);
 
   useEffect(()=>{
@@ -39,7 +39,7 @@ const MovieDetailsPage = () => {
   return (
     <main>
       <div className={s.contentWrap}>
-        <Link className={s.backButton} to={backLinkHref}> &lt; Go back</Link>
+        <Link className={s.backButton} to={backLinkHref.current}> &lt; Go back</Link>
         {isError && <h2>Something went wrong, please try again</h2>}
         {/* {isLoading && <Loader/>} */}
         <MovieCard data={movie} />
