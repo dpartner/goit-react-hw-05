@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import {fetchTrendMovies} from '../../services/api'
 import MovieList from "../../components/MovieList/MovieList";
-import s from './Home.module.css'
+import s from './HomePage.module.css'
 // import Loader from "../../components/Loader/Loader";
 
-const Home = () => {
+const HomePage = () => {
   const [trends, setTrends] = useState([]);
   const [isError, setIsError] = useState(false);
   // const [isLoading, setIsLoading] = useState(false);
@@ -40,4 +40,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default HomePage

@@ -9,6 +9,7 @@ const MovieCast = () => {
   const [cast, setCast] = useState(null);
   // const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
+  const defaultImg = "https://dummyimage.com/400x600/cdcdcd/000.jpg&text=No+poster";
 
   useEffect(()=>{
     const fetchData = async () => {
@@ -43,8 +44,8 @@ const MovieCast = () => {
           return (
             <li className={s.castItem} key={actor.id}>
               <div className={s.imgWrap}>
-                <img src={`https://image.tmdb.org/t/p/w300/${
-actor.profile_path}`} alt={actor.name} />
+                <img src={actor.profile_path ? `https://image.tmdb.org/t/p/w300/${
+actor.profile_path}` : defaultImg} alt={actor.name} className={s.img} />
               </div>
               <div>
                 <h3>{actor.name}</h3>

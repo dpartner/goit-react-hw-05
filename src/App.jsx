@@ -10,7 +10,7 @@ import Loader from './components/Loader/Loader';
 // import MovieReviews from './components/MovieReviews/MovieReviews'
 // import NotFoundPage from './pages/NotFoundPage/NotFoundPage'
 
-const Home = lazy(() => import('./pages/Home/Home'));
+const HomePage = lazy(() => import('./pages/HomePage/HomePage'));
 const MoviesPage = lazy(() => import('./pages/MoviesPage/MoviesPage'));
 const MovieDetailsPage = lazy(() => import('./pages/MovieDetailsPage/MovieDetailsPage'));
 const MovieCast = lazy(() => import('./components/MovieCast/MovieCast'));
@@ -26,7 +26,7 @@ function App() {
 
       <Suspense fallback={<Loader />}>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<HomePage />} />
           <Route path="/movies" element={<MoviesPage />} />
           <Route path="/movies/:movieId" element={<MovieDetailsPage />} >
             <Route path='/movies/:movieId/cast' element={<MovieCast />}/>
