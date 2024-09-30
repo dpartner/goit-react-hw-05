@@ -28,5 +28,5 @@ export const fetchMovieCast = async (id) => {
 }
 export const fetchMovieReviews = async (id) => {
   const {data} = await axios.get(`movie/${id}/reviews?language=en-US`, options);
-  return data;
+  return data.results;
 }

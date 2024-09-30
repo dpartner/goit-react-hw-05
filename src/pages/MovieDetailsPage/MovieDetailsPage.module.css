@@ -1,0 +1,39 @@
+.contentWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  z-index: 1;
+}
+
+.backButton {
+  margin-bottom: 30px;
+  display: inline-block;
+  padding: 3px 16px;
+  border: 1px solid grey;
+  border-radius: 5px;
+  color: whitesmoke;
+  background-color: #800080;
+  text-decoration: none;
+}
+
+.info {
+  text-align: left;
+}
+
+.infoLinkWrap {
+  text-align: left;
+  margin-bottom: 30px;
+}
+
+.infoLink {
+  color: #800080;
+  text-decoration: none;
+  &:first-child {
+    margin-right: 10px;
+  }
+&:hover,
+&:focus {
+  text-decoration: underline;
+}
+}

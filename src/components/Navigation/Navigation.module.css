@@ -1,0 +1,30 @@
+.header {
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.navWrap {
+  width: 100%;
+  display: flex;
+  background-color: #e2e1e16d;
+  padding: 10px 20px;
+  border-radius: 10px;
+  color: aliceblue;
+  box-shadow: 0 0 7px #800080da;
+}
+
+.link {
+  color: black;
+  &:not(:last-child) {
+    margin-right: 20px;
+  }
+  &:hover,
+  &:focus {
+    color: #800080;
+    text-decoration: underline;
+  }
+}
+
+.activeLink {
+  color: #800080da;
+}

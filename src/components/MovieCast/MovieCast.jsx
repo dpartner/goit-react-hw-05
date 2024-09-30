@@ -1,28 +1,28 @@
 import { useParams } from "react-router-dom"
 import { fetchMovieCast } from "../../services/api";
 import { useState, useEffect } from "react";
-import Loader from "../../components/Loader/Loader";
+// import Loader from "../../components/Loader/Loader";
+import s from './MovieCast.module.css'
 
 const MovieCast = () => {
   const {movieId} = useParams();
   const [cast, setCast] = useState(null);
-  const [isLoading, setIsLoading] = useState(false);
+  // const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
 
   useEffect(()=>{
     const fetchData = async () => {
       try {
         setIsError(false);
-        setIsLoading(true)
+        // setIsLoading(true)
         const data = await fetchMovieCast(movieId);
         setCast(data.cast);
-        console.log(data.cast)
       }
       catch {
         setIsError(true)
       }
       finally {
-        setIsLoading(false)
+        // setIsLoading(false)
       }
     }
     fetchData();
@@ -34,15 +34,15 @@ const MovieCast = () => {
   return (
     <>
       {isError && <h2>Something went wrong, please try again</h2>}
-      {isLoading && <Loader/>}
-      {<ul>
+      {/* {isLoading && <Loader/>} */}
+      {<ul className={s.castWrap}>
         {cast.map((actor, index) => {
           if (index > 9) {
             return;
           }
           return (
-            <li key={actor.id}>
-              <div>
+            <li className={s.castItem} key={actor.id}>
+              <div className={s.imgWrap}>
                 <img src={`https://image.tmdb.org/t/p/w300/${
 actor.profile_path}`} alt={actor.name} />
               </div>

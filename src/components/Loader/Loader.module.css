@@ -1,0 +1,13 @@
+.loaderWrap {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(63, 64, 64, 0.224);
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+  z-index: 999;
+}

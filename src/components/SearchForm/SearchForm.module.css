@@ -1,0 +1,22 @@
+.inputQuery {
+  padding: 6px 16px;
+  border-radius: 10px;
+  border: 1px solid #800080;
+  margin-right: 20px;
+  color: #800080;
+}
+
+.submit {
+  padding: 6px 16px;
+  border-radius: 10px;
+  border: 1px solid #800080;
+  background-color: #800080;
+  color: aliceblue;
+  transition: all 300ms ease-in;
+  &:hover,
+  &:focus {
+    background-color: transparent;
+    color: #800080;
+    cursor: pointer;
+  }
+}

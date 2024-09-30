@@ -7,18 +7,18 @@ const MovieCard = ({data: {title,
   return (
     <div className={s.movieCardWrap}>
         <div className={s.imgWrap}>
-          <img src={`https://image.tmdb.org/t/p/w500/${
+          <img className={s.image} src={`https://image.tmdb.org/t/p/w500/${
 poster_path}`} alt="" />
         </div>
         <div className={s.descWrap}>
-          <h2>{title}</h2>
-          <p>Rating: {vote_average}</p>
-          <h3>Overview</h3>
-          <p className={s.overview}>{overview
+          <h2 className={s.heading}>{title}</h2>
+          <p className={s.rating}>Rating: {vote_average}</p>
+          <h3 className={s.overviewHeading}>Overview</h3>
+          <p className={s.overviewDesc}>{overview
           }</p>
-          <h4>Genres</h4>
+          <h4 className={s.genresHeading}>Genres</h4>
           <p>
-            {genres.map(genre => genre.name).join('  ')}
+            {genres.map(genre => genre.name).join(' ')}
           </p>
         </div>
       </div>

@@ -1,0 +1,19 @@
+.reviewItem {
+  text-align: left;
+  margin-bottom: 30px;
+  &::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: #800080;
+  }
+}
+
+.reviewHeading {
+  margin-bottom: 20px;
+}
+
+.review {
+  margin-bottom: 30px;
+}
